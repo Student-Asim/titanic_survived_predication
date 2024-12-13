@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Data model Prediction</title>
+    <style>
+        *{
+             margin:5px;
+        }
+       .navigation{
+        background-color: rgb(39, 35, 35);
+        color: aliceblue;
+        height: 5vh;
+        border-radius: 5px;
+        width: 400px;
+        margin-left: 140px;
+
+        padding-left: 10px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+       }
+
+       .message_display{
+        border:50px;
+        border-radius:10px;
+        color: aliceblue;
+        border-radius: 1px;
+        margin-left: 240px;
+
+       }
+        .category{
+        color: white;
+        font-size: 50px;
+        background-color: rgb(162, 189, 39);
+        display: inline-block;
+        border: 200px;
+        border-radius: 2px;
+
+       }
+
+
+       .group{
+        background-color: rgb(103, 102, 76);
+        color:white;
+        display: inline-block;
+        margin-left: 180px;
+        padding: 20px;
+
+       }
+       .group:hover{
+        border-radius: 10px;
+        border-color: red;
+        border:20px;
+        box-shadow: 1px 2px 2px 3px;
+
+       }
+       .btn{
+        background-color: rgb(209, 55, 55);
+        border-radius: 5px;
+        border:2px;
+        cursor: pointer;
+        margin-left: 100px;
+        padding: 7px;
+       }
+       .footer_demo{
+        background-color: rgb(245, 250, 255);
+        display: inline-block;
+        color: rgb(103, 182, 182);
+        position: absolute;
+        bottom: 50px;
+
+       }
+    </style>
+</head>
+<body>
+<nav class="navigation">
+    <h2>Titanic Passenger Survived System</h2>
+</nav>
+<div class="container">
+    <form class="group" action="#" method="POST">
+        <label for="passengercls">Passenger Class:</label>
+        <input list="passenger" name="passengerClass" id="passclass" placeholder="Enter the class of passenger">
+        <datalist id="passenger">
+            <option value="1" class="class_list">
+            <option value="2" class="class_list">
+            <option value="3" class="class_list">
+        </datalist><br>
+        <label for="age">Age:</label>
+        <input class="age" type="number" name="age">
+        <input type="radio" id="male" name="gender" value="1">
+        <label for="1">Male</label><br>
+        <input type="radio" id="female" name="gender" value="0">
+        <label for="0">Female</label>
+        </br>
+
+        <button class="btn" type="submit">Submit</button>
+    </form>
+    <div class="message_display">
+        {% with messages = get_flashed_messages(with_categories = true)%}
+            {% if messages %}
+               {% for category, i in messages %}
+                   <div class="category">
+                      {{i}}
+                   </div>
+               {% endfor %}
+            {% endif %}
+        {% endwith %}
+        </div>
+<footer class="footer_demo">
+    <div class="container1">
+        <div class="card">
+            <div class="card_body">
+                <h3 class="htp">Titanic Dataset Repo</h3>
+                <p><a href="https://www.linkedin.com/in/asim-saru-43baa731b">@Asim Saru</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
